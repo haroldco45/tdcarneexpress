@@ -12,55 +12,80 @@
             --blanco: #ffffff;
         }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--negro); color: var(--blanco); margin: 0; padding: 0; text-align: center; }
-        .container { max-width: 450px; margin: auto; padding: 20px; border: 1px solid #333; }
-        .logo { width: 180px; margin-bottom: 20px; filter: drop-shadow(2px 2px 5px rgba(255,0,0,0.5)); }
-        h1 { color: var(--amarillo); font-size: 24px; margin-bottom: 5px; }
-        .direccion { font-size: 14px; margin-bottom: 20px; color: #ccc; }
-        .btn { display: block; width: 85%; margin: 10px auto; padding: 15px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: 0.3s; font-size: 16px; }
+        .container { max-width: 450px; margin: auto; padding: 20px; }
+        
+        /* Ajuste de Logo Profesional */
+        .logo { 
+            width: 100%; 
+            max-width: 280px; 
+            height: auto; 
+            margin: 10px auto 20px auto; 
+            display: block;
+            filter: drop-shadow(0px 4px 8px rgba(255, 0, 0, 0.3));
+        }
+
+        h1 { color: var(--amarillo); font-size: 26px; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px; }
+        .direccion { font-size: 14px; margin-bottom: 25px; color: #bbb; line-height: 1.4; padding: 0 10px; }
+        
+        /* Botones Interactivos */
+        .btn { display: flex; align-items: center; justify-content: center; width: 90%; margin: 12px auto; padding: 16px; border-radius: 15px; text-decoration: none; font-weight: bold; transition: 0.3s; font-size: 17px; box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
+        .btn:active { transform: scale(0.96); }
+        
         .btn-whatsapp { background-color: #25d366; color: white; }
         .btn-call { background-color: var(--amarillo); color: black; }
         .btn-menu { background-color: var(--rojo); color: white; }
-        .menu-items { text-align: left; padding: 15px; background: #111; border-radius: 15px; margin-top: 20px; }
-        .menu-items p { border-bottom: 1px solid #333; padding: 8px 0; display: flex; justify-content: space-between; }
-        footer { margin-top: 30px; font-size: 11px; color: #666; padding-bottom: 20px; }
+
+        /* Catálogo de Productos */
+        .menu-items { text-align: left; padding: 20px; background: #111; border-radius: 20px; margin-top: 25px; border: 1px solid #222; }
+        .menu-items h3 { text-align: center; margin-top: 0; color: var(--amarillo); border-bottom: 1px solid var(--rojo); padding-bottom: 10px; }
+        .menu-items p { border-bottom: 1px dotted #333; padding: 10px 0; display: flex; justify-content: space-between; font-size: 15px; }
+        .precio { color: var(--amarillo); font-weight: bold; }
+
+        footer { margin-top: 40px; font-size: 11px; color: #666; padding-bottom: 30px; line-height: 1.6; }
         
-        /* Control de Suscripción Invisible */
-        #expired-msg { display: none; background: rgba(0,0,0,0.9); position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1000; padding-top: 100px; color: white; }
+        /* Control de Suscripción */
+        #expired-msg { display: none; background: #000; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; padding-top: 200px; color: white; }
     </style>
 </head>
 <body>
 
-<div id="expired-msg"><h1>SERVICIO SUSPENDIDO</h1><p>Por favor contacte al administrador.</p></div>
+<div id="expired-msg">
+    <h1 style="color:red;">SERVICIO TEMPORALMENTE SUSPENDIDO</h1>
+    <p>Para reactivar su tarjeta digital, contacte al administrador.</p>
+</div>
 
 <div class="container">
-    <img src="https://i.ibb.co/logo-carnes-express.png" alt="Carnes Express Logo" class="logo">
+    <img src="logo.PNG" alt="Carnes Express Logo" class="logo">
     
     <h1>CARNES EXPRESS</h1>
     <p class="direccion">📍 Detrás de la cancha de Softball, al frente de Cuarto Bate, Pueblo Nuevo, Caucasia.</p>
 
-    <a href="https://wa.me/573244749034?text=Hola!%20Deseo%20hacer%20un%20pedido%20de%20la%20carta." class="btn btn-whatsapp">📱 Pedir por WhatsApp</a>
+    <a href="https://wa.me/573244749034?text=Hola!%20Vengo%20de%20tu%20Tarjeta%20Digital,%20deseo%20hacer%20un%20pedido." class="btn btn-whatsapp">🟢 WhatsApp Pedidos</a>
     <a href="tel:3123018341" class="btn btn-call">📞 Llamar Ahora</a>
-    <a href="#menu" class="btn btn-menu">📋 Ver Menú Detallado</a>
+    <a href="#menu" class="btn btn-menu">📜 Ver Menú y Precios</a>
 
     <div id="menu" class="menu-items">
-        <h3 style="color:var(--amarillo)">NUESTRO MENÚ</h3>
-        <p><span>Solomito</span> <span>$25.000</span></p>
-        <p><span>Churrasco</span> <span>$32.000</span></p>
-        <p><span>Punta de Anca</span> <span>$37.000</span></p>
-        <p><span>Chuleta de Cerdo</span> <span>$25.000</span></p>
-        <p><span>Chorizos (3 und)</span> <span>$12.000</span></p>
-        <p><span>Salchipapa R/ra</span> <span>$22.000</span></p>
+        <h3>♨️ NUESTRO MENÚ</h3>
+        <p><span>Solomito</span> <span class="precio">$25.000</span></p>
+        <p><span>Churrasco</span> <span class="precio">$32.000</span></p>
+        <p><span>Punta de Anca</span> <span class="precio">$37.000</span></p>
+        <p><span>Chuleta de Cerdo</span> <span class="precio">$25.000</span></p>
+        <p><span>Salchipapa R/ra</span> <span class="precio">$22.000</span></p>
+        <p><span>Choripapa</span> <span class="precio">$22.000</span></p>
+        <p><span>Chorizos (3 und)</span> <span class="precio">$12.000</span></p>
+        <p style="border:none;"><span>Adiciones (Papa/Arepa)</span> <span class="precio">$4.000</span></p>
     </div>
 
     <footer>
-        App desarrollada por <strong>Vibras Positivas (3117700431)</strong><br>
-        Derechos de Autor &copy; 2026 | Caucasia, Antioquia
+        APP DESARROLLADA POR<br>
+        <strong>VIBRAS POSITIVAS (3117700431)</strong><br>
+        Derechos de Autor © 2026 | Caucasia, Antioquia
     </footer>
 </div>
 
 <script>
-    // CONTROL DE SUSCRIPCIÓN INVISIBLE (Lógica GitHub)
-    const FECHA_VENCIMIENTO = "2027-03-14"; // Vence en 1 año
+    // Lógica de Vencimiento: 14 de Marzo de 2027
+    const FECHA_VENCIMIENTO = "2027-03-14"; 
     const hoy = new Date().toISOString().split('T')[0];
     if (hoy > FECHA_VENCIMIENTO) {
         document.getElementById('expired-msg').style.display = 'block';
